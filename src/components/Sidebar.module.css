@@ -52,13 +52,20 @@
   height: 50px;
   padding: 0 1.5rem;
   font-weight: bold;
-  display: block;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   transition: color 0.1s, background-color 0.1s;
+  -webkit-transition: color 0.1s, background-color 0.1s;
+  -moz-transition: color 0.1s, background-color 0.1s;
+  -ms-transition: color 0.1s, background-color 0.1s;
+  -o-transition: color 0.1s, background-color 0.1s;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 
 .sidebar footer a:hover {
