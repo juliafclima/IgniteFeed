@@ -1,6 +1,7 @@
-import { NotePencil  } from "phosphor-react";
+import { NotePencil } from "phosphor-react";
 
 import styles from "./Sidebar.module.css";
+import { Avatar } from "./Avatar";
 
 export function Sidebar() {
   return (
@@ -11,10 +12,7 @@ export function Sidebar() {
       />
 
       <div className={styles.profile}>
-        <img
-          className={styles.avatar}
-          src="https://github.com/juliafclima.png"
-        />
+        <Avatar src="https://github.com/juliafclima.png" />
 
         <strong>Júlia Lima</strong>
         <span>Front-End Developer</span>
@@ -22,7 +20,7 @@ export function Sidebar() {
 
       <footer>
         <a href="#">
-          <NotePencil  size={20} />
+          <NotePencil size={20} />
           Editar perfil
         </a>
       </footer>
