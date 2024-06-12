@@ -4,16 +4,16 @@ import { Avatar } from "./Avatar";
 
 import styles from "./Comment.module.css";
 
-export function Comment(props) {
+export function Comment({ avatarUrl, author, content }) {
   return (
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src="https://github.com/vs-costa.png" />
+      <Avatar hasBorder={false} src={avatarUrl} />
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Victor Soares</strong>
+              <strong>{author}</strong>
               <time
                 title="11 de Junho às 16:48h"
                 dateTime="2024-06-11 16:48:00"
@@ -27,7 +27,7 @@ export function Comment(props) {
             </button>
           </header>
 
-          <p>{props.comment}</p>
+          <p>{content}</p>
         </div>
 
         <footer>
