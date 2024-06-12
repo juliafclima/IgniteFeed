@@ -3,8 +3,19 @@ import { Heart, TrashSimple } from "phosphor-react";
 import { Avatar } from "./Avatar";
 
 import styles from "./Comment.module.css";
+import { useState } from "react";
 
-export function Comment({ avatarUrl, author, content }) {
+export function Comment({ avatarUrl, author, content, onDeleteComment }) {
+  const [likeCount, setLikeCount] = useState(0);
+
+  function handleDeleteComment() {
+    onDeleteComment(content);
+  }
+
+  function handleLikeComment() {
+    setLikeCount(likeCount + 1);
+  }
+
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src={avatarUrl} />
@@ -22,7 +33,7 @@ export function Comment({ avatarUrl, author, content }) {
               </time>
             </div>
 
-            <button title="Deletar comentário">
+            <button onClick={handleDeleteComment} title="Deletar comentário">
               <TrashSimple size={24} />
             </button>
           </header>
@@ -31,9 +42,9 @@ export function Comment({ avatarUrl, author, content }) {
         </div>
 
         <footer>
-          <button>
+          <button onClick={handleLikeComment}>
             <Heart />
-            <span>20</span>
+            <span>{likeCount}</span>
           </button>
         </footer>
       </div>
