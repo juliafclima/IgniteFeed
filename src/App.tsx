@@ -1,6 +1,6 @@
-import { Header } from "./components/Header";
-import { Sidebar } from "./components/Sidebar";
-import { Post } from "./components/Post";
+import { Header } from "./components/Header.tsx";
+import { Sidebar } from "./components/Sidebar.tsx";
+import { Post } from "./components/Post.tsx";
 
 import styles from "./App.module.css";
 import "./global.css";
@@ -15,16 +15,16 @@ const posts = [
     },
     content: [
       {
-        type: "paragraph",
+        type: "paragraph" as "paragraph",
         content: "Fala galera 👋",
       },
       {
-        type: "paragraph",
+        type: "paragraph" as "paragraph",
         content:
           "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
       },
       {
-        type: "link",
+        type: "link" as "link",
         content: "jane.design/doctorcare",
       },
     ],
@@ -39,16 +39,16 @@ const posts = [
     },
     content: [
       {
-        type: "paragraph",
+        type: "paragraph" as "paragraph",
         content: "Fala galera 👋",
       },
       {
-        type: "paragraph",
+        type: "paragraph" as "paragraph",
         content:
           "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
       },
       {
-        type: "link",
+        type: "link" as "link",
         content: "jane.design/doctorcare",
       },
     ],

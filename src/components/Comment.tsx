@@ -5,7 +5,19 @@ import { Avatar } from "./Avatar";
 import styles from "./Comment.module.css";
 import { useState } from "react";
 
-export function Comment({ avatarUrl, author, content, onDeleteComment }) {
+interface CommentProps {
+  content: string;
+  author: string;
+  avatarUrl: string;
+  onDeleteComment: (comment: string) => void;
+}
+
+export function Comment({
+  avatarUrl,
+  author,
+  content,
+  onDeleteComment,
+}: CommentProps) {
   const [likeCount, setLikeCount] = useState(0);
 
   function handleDeleteComment() {
