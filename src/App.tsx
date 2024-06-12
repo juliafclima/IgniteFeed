@@ -1,11 +1,11 @@
 import { Header } from "./components/Header.tsx";
 import { Sidebar } from "./components/Sidebar.tsx";
-import { Post } from "./components/Post.tsx";
+import { Post, PostType } from './components/Post'
 
 import styles from "./App.module.css";
 import "./global.css";
 
-const posts = [
+const posts: PostType[] = [
   {
     id: 1,
     author: {
@@ -15,16 +15,16 @@ const posts = [
     },
     content: [
       {
-        type: "paragraph" as "paragraph",
+        type: "paragraph",
         content: "Fala galera 👋",
       },
       {
-        type: "paragraph" as "paragraph",
+        type: "paragraph",
         content:
           "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
       },
       {
-        type: "link" as "link",
+        type: "link",
         content: "jane.design/doctorcare",
       },
     ],
@@ -39,16 +39,16 @@ const posts = [
     },
     content: [
       {
-        type: "paragraph" as "paragraph",
+        type: "paragraph",
         content: "Fala galera 👋",
       },
       {
-        type: "paragraph" as "paragraph",
+        type: "paragraph",
         content:
           "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
       },
       {
-        type: "link" as "link",
+        type: "link",
         content: "jane.design/doctorcare",
       },
     ],
@@ -69,9 +69,7 @@ function App() {
             return (
               <Post
                 key={post.id}
-                author={post.author}
-                content={post.content}
-                publishedAt={post.publishedAt}
+                post={post}
               />
             );
           })}
